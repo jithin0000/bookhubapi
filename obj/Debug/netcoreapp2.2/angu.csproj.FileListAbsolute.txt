@@ -1,0 +1,14 @@
+E:\workspace\dotnet\angu\bin\Debug\netcoreapp2.2\angu.deps.json
+E:\workspace\dotnet\angu\bin\Debug\netcoreapp2.2\angu.runtimeconfig.json
+E:\workspace\dotnet\angu\bin\Debug\netcoreapp2.2\angu.runtimeconfig.dev.json
+E:\workspace\dotnet\angu\bin\Debug\netcoreapp2.2\angu.dll
+E:\workspace\dotnet\angu\bin\Debug\netcoreapp2.2\angu.pdb
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.csprojAssemblyReference.cache
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.csproj.CoreCompileInputs.cache
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.RazorAssemblyInfo.cache
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.RazorAssemblyInfo.cs
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.AssemblyInfoInputs.cache
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.AssemblyInfo.cs
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.RazorTargetAssemblyInfo.cache
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.dll
+E:\workspace\dotnet\angu\obj\Debug\netcoreapp2.2\angu.pdb
