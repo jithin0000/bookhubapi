@@ -17,11 +17,25 @@ namespace angu.Data
         public void Add<T>(T entity) where T : class
         {
             _context.Add(entity);
+            
         }
 
         public void Delete<T>(T entity) where T : class
         {
             _context.Remove(entity);
+        }
+
+        public async Task<Book> GetBookById(long id)
+        {
+           var book = await _context.Books.FirstOrDefaultAsync(p => p.Id == id);
+
+           return book;
+        }
+
+        public async Task<IEnumerable<Book>> GetBooks()
+        {
+            var books = await _context.Books.ToListAsync();
+            return books;
         }
 
         public async Task<User> GetUserById(long id)

@@ -17,6 +17,9 @@ namespace angu.Helpers
                 }
             );
             CreateMap<Photo, PhotoDetail>();
+            CreateMap<Book, BookListTodo>();
+            CreateMap<Book, BookDetailDto>();
+            CreateMap<BookDtoForCreate , Book>();
         }
     }
 }

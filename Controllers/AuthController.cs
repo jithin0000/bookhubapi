@@ -32,7 +32,13 @@ namespace angu.Controllers
             userDto.Username = userDto.Username.ToLower();
             if(await _auth.UserExist(userDto.Username)) return BadRequest("user is already exist with this username");
 
-            var userToCreate  = new User {Username = userDto.Username};
+            var userToCreate  = new User {
+                Username = userDto.Username,
+                CreatedAt = userDto.CreatedAt,
+                LastActive = userDto.LastActive,
+                Gender = userDto.Gender,
+                Photos = userDto.Photos
+            };
 
             var createduser = await _auth.RegisterUser(userToCreate , userDto.Password);
 

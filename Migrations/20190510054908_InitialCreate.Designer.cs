@@ -9,8 +9,8 @@ using angu.Data;
 namespace angu.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190423020039_AddedUserModel")]
-    partial class AddedUserModel
+    [Migration("20190510054908_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,10 +18,36 @@ namespace angu.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
+            modelBuilder.Entity("angu.models.Photo", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("UploadedOn");
+
+                    b.Property<string>("Url");
+
+                    b.Property<long>("UserId");
+
+                    b.Property<bool>("isMain");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Photos");
+                });
+
             modelBuilder.Entity("angu.models.User", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Gender");
+
+                    b.Property<DateTime>("LastActive");
 
                     b.Property<byte[]>("PasswordHash");
 
@@ -44,6 +70,14 @@ namespace angu.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Values");
+                });
+
+            modelBuilder.Entity("angu.models.Photo", b =>
+                {
+                    b.HasOne("angu.models.User", "user")
+                        .WithMany("Photos")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

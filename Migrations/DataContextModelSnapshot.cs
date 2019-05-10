@@ -16,6 +16,32 @@ namespace angu.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
+            modelBuilder.Entity("angu.models.Book", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("BookName");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<int>("Price");
+
+                    b.Property<string>("Publisher");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<long?>("UserId1");
+
+                    b.Property<string>("Writer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Books");
+                });
+
             modelBuilder.Entity("angu.models.Photo", b =>
                 {
                     b.Property<long>("Id")
@@ -68,6 +94,13 @@ namespace angu.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Values");
+                });
+
+            modelBuilder.Entity("angu.models.Book", b =>
+                {
+                    b.HasOne("angu.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("angu.models.Photo", b =>

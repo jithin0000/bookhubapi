@@ -9,14 +9,40 @@ using angu.Data;
 namespace angu.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190510050813_photos")]
-    partial class photos
+    [Migration("20190510060116_addedbook")]
+    partial class addedbook
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+
+            modelBuilder.Entity("angu.models.Book", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("BookName");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<int>("Price");
+
+                    b.Property<string>("Publisher");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<long?>("UserId1");
+
+                    b.Property<string>("Writer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Books");
+                });
 
             modelBuilder.Entity("angu.models.Photo", b =>
                 {
@@ -28,6 +54,8 @@ namespace angu.Migrations
                     b.Property<string>("Url");
 
                     b.Property<long>("UserId");
+
+                    b.Property<bool>("isMain");
 
                     b.HasKey("Id");
 
@@ -68,6 +96,13 @@ namespace angu.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Values");
+                });
+
+            modelBuilder.Entity("angu.models.Book", b =>
+                {
+                    b.HasOne("angu.models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
                 });
 
             modelBuilder.Entity("angu.models.Photo", b =>

@@ -10,6 +10,5 @@ namespace angu.Dtos
         public DateTime UploadedOn { get; set; }
         public bool isMain { get; set; }
 
-        public User user { get; set; }
     }
 }

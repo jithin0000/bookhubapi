@@ -13,7 +13,9 @@ namespace angu.Data
          Task<bool> SaveAll();
 
          Task<IEnumerable<User>> GetUsers();
+         Task<IEnumerable<Book>> GetBooks();
 
          Task<User> GetUserById(long id);
+         Task<Book> GetBookById(long id);
     }
 }
