@@ -49,6 +49,7 @@ namespace angu
             services.AddScoped<IAuthRespository , AuthRepository>();
             services.AddScoped<IDatingRespository , DatingRepository>();
             services.AddAutoMapper();
+            services.AddScoped<LogUserActionFilter>();
     
              services.AddSwaggerGen(c => {  
                 c.SwaggerDoc("v1", new Info {  

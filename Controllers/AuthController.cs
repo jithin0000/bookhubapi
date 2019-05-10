@@ -34,8 +34,6 @@ namespace angu.Controllers
 
             var userToCreate  = new User {
                 Username = userDto.Username,
-                CreatedAt = userDto.CreatedAt,
-                LastActive = userDto.LastActive,
                 Gender = userDto.Gender,
                 Photos = userDto.Photos
             };

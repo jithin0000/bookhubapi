@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using angu.Data;
 using angu.Dtos;
+using angu.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace angu.Controllers
 {
+    [ServiceFilter(typeof(LogUserActionFilter))]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
