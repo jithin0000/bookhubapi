@@ -21,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace angu
 {
@@ -49,6 +50,15 @@ namespace angu
             services.AddScoped<IDatingRespository , DatingRepository>();
             services.AddAutoMapper();
     
+             services.AddSwaggerGen(c => {  
+                c.SwaggerDoc("v1", new Info {  
+                    Version = "v1",  
+                        Title = "My First API",  
+                        Description = "My First ASP.NET Core 2.0 Web API",  
+                        TermsOfService = "None",  
+                          
+                });  
+            });  
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer( options => {
@@ -95,6 +105,10 @@ namespace angu
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader() );
             app.UseAuthentication();
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => {  
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");  
+            }); 
         }
     }
 }
