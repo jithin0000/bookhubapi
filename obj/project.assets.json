@@ -12705,11 +12705,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\workspace\\dotnet\\angu\\angu.csproj",
+      "projectUniqueName": "e:\\workspace\\dotnet\\angu\\angu.csproj",
       "projectName": "angu",
-      "projectPath": "E:\\workspace\\dotnet\\angu\\angu.csproj",
+      "projectPath": "e:\\workspace\\dotnet\\angu\\angu.csproj",
       "packagesPath": "C:\\Users\\jithin\\.nuget\\packages\\",
-      "outputPath": "E:\\workspace\\dotnet\\angu\\obj\\",
+      "outputPath": "e:\\workspace\\dotnet\\angu\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
