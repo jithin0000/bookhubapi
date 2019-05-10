@@ -1,8 +1,9 @@
 using System;
+using angu.models;
 
-namespace angu.models
+namespace angu.Dtos
 {
-    public class Photo
+    public class PhotoDetail
     {
         public long Id { get; set; }
         public string Url { get; set; }
@@ -10,6 +11,5 @@ namespace angu.models
         public bool isMain { get; set; }
 
         public User user { get; set; }
-        public long UserId { get; set; }
     }
 }

@@ -31,12 +31,12 @@ namespace angu.Controllers
         return Ok(response);
     }
 
-    [HttpGet("{{id}}")]
+    [HttpGet("{id}")]
 
     public async Task<IActionResult> GetUser(long id)
     {
         var user = await _repo.GetUserById(id);
-        var response = _mapper.Map<UserForListDto>(user);
+        var response = _mapper.Map<UserDetail>(user);
 
         return Ok(response);
     }

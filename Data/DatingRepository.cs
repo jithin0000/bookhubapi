@@ -26,7 +26,7 @@ namespace angu.Data
 
         public async Task<User> GetUserById(long id)
         {
-            var userReturned = await _context.Users.FirstOrDefaultAsync( user => user.Id == id);
+            var userReturned = await _context.Users.Include(p => p.Photos).FirstOrDefaultAsync( user => user.Id == id);
 
             return userReturned;
 
@@ -34,7 +34,7 @@ namespace angu.Data
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await _context.Users.ToListAsync();
+            var users = await _context.Users.Include(p => p.Photos).ToListAsync();
             return users;
         }
 
